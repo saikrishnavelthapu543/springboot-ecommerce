@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Entity.OrderPojo;
 import com.example.Service.orderservice;
 
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("order")
@@ -25,7 +24,7 @@ public class ordercontroller {
 	@Autowired
 	private orderservice os;
 	@PostMapping("save")
-	public ResponseEntity<Object> save(@Valid @RequestBody OrderPojo op) throws Exception
+	public ResponseEntity<Object> save( @RequestBody OrderPojo op) throws Exception
 	{
 		os.save(op);
 		return new ResponseEntity<Object>(op,HttpStatus.OK);

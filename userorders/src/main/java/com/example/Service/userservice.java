@@ -21,7 +21,6 @@ public class userservice {
 	@Autowired
 	private ModelMapper modelMapper;
 	
-	UserPojo uj=new UserPojo();
 	
 	public ResponseEntity<UserDto> save(UserPojo up)
 	{

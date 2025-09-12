@@ -17,7 +17,6 @@ import com.example.DTO.UserDto;
 import com.example.Entity.UserPojo;
 import com.example.Service.userservice;
 
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("user")
@@ -26,7 +25,7 @@ public class usercontroller {
 	@Autowired
 	private userservice us;
 	@PostMapping("save")
-	public ResponseEntity<UserDto> save(@Valid @RequestBody UserPojo up)
+	public ResponseEntity<UserDto> save( @RequestBody UserPojo up)
 	{
 		return us.save(up);
 	}
